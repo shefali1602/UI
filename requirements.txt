@@ -1,0 +1,4 @@
+rapidfuzz
+Flask
+pandas
+openpyxl

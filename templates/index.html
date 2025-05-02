@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Infentora</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+        <!-- Header with logo, centered title, and right-side links -->
+        <div class="header">
+            <div class="header-left">
+                <img src="/static/logo.png" alt="Logo" class="logo">
+            </div>
+            <div class="header-center">
+                <p class="logo-text">Infentora</p>
+            </div>
+            <div class="header-right">
+                <a href="/reset" class="header-link">Reset Conversation</a>
+                <a href="/exit" class="header-link">Exit</a>
+            </div>
+        </div>
+
+
+    <div id="container">
+        <ul style="list-style-type: none; padding: 0;">
+            {% for chat in chat_list %}
+                {% if chat[0] == 'Bot' %}
+                    <li class="Bot">
+                        {{ chat[1] | safe }}
+                        {% if chat[2] %}
+                        <div id="type-selection">
+                            Please select a type:
+                            <form action="/select_type" method="POST">
+                                <select id="my_type" name="my_type">
+                                    {% for my_type in chat[2] %}
+                                    <option value="{{ my_type }}">{{ my_type }}</option>
+                                    {% endfor %}
+                                </select>
+                                <button id="submit-type" class="messageInput">Submit</button>
+                            </form>
+                        </div>
+                        {% endif %}
+                    </li>
+                {% else %}
+                    <li class="User">{{ chat[1] }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="user-input-div">
+        <center>
+            <form id="chat-form" action="/chat" method="POST">
+                <input type="text" id="user_input" name="user_input" placeholder="Say Something..." required autofocus {{disabled_ui}}>
+                <button type="submit" {{disabled_ui}}>Send</button>
+            </form>
+            <footer>
+                <p><i><b>Disclaimer:</b> Infentora is currently in the POC stage with a limited knowledge base.<br>
+                For additional queries, please contact <a href="mailto:dg.gts_data_infentora_poc_dev@mail.com">DG GTS DATA Infentora POC DEV</a></i></p>
+            </footer>
+        </center>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+}
+
+/* Header section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-left {
+    flex: 0 0 auto;
+}
+
+.header-center {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header-right {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 15px;
+}
+
+.logo {
+    height: 50px;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #020281;
+    margin: 0;
+}
+
+.header-link {
+    color: #020281;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.header-link:hover {
+    text-decoration: underline;
+}
+
+/* Chat bubbles */
+#container {
+    height: 400px;
+    overflow-y: auto;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    padding-bottom: 10%;
+    padding-right: 4%;
+}
+
+.Bot {
+    background-color: #f0f0f0;  /* original bot color */
+    color: black;
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 8px;
+    max-width: 60%;
+    margin: 6px 12px;
+    float: left;
+    clear: both;
+    line-height: 1.4;
+}
+.User {
+    background-color: #020281;  /* original user color */
+    color: white;
+    padding: 6px 10px;
+    font-size: 13px;
+    border-radius: 8px;
+    max-width: 60%;
+    margin: 6px 12px;
+    float: right;
+    clear: both;
+    line-height: 1.4;
+}
+
+/* Input bar (your preferred version) */
+#user-input-div {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+}
+
+#user_input {
+    width: calc(100% - 60%);
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+button {
+    padding: 10px;
+    background-color: #020281;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0303a1;
+}
+
+#chat-form {
+    display: block;
+}
+
+footer {
+    font-size: 10pt;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#type-selection {
+    margin-top: 10px;
+}
